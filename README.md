@@ -1,21 +1,36 @@
 # Pomaid
+The intention of this project is to be a terminal based task manager with first class pomodoro tracking support
 
-**TODO: Add description**
+## Inspiration
+This project was inspired by two existing pieces of software. Both of these projects are fantastic and do more than Pomaid will ever do, I highly recommend checking them out.
 
-## Installation
+### Taskell
+  - [Taskell](https://github.com/smallhadroncollider/taskell): Command-line Kanban board/task manager with support for Trello boards and GitHub projects https://taskell.app
+    - Awesome Terminal UI task manager that was almost everything I wanted(only missing the Pomodoro functionality)
+    - I tried to pick up Haskell and add it myself, but Haskell just isn't as enjoyable to write as elixir and since this is a project I intent to use and modify a lot I wanted it to be in a language I really enjoy writing
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `pomaid` to your list of dependencies in `mix.exs`:
+### Kanban Flow
+  - [Kanban Flow](https://kanbanflow.com/features): Great Web based task manager with pomodoro support
+    - This has been my main task managing tool and is how I will track the beginning of building Pomaid.
+    - Kanban Flow does everything that I want except:
+      - Run in the terminal
+      - First-class keyboard support(really hard to select a task with just the keyboard)
+      - Run a script at the beginning and end of each pomodoro
+        - Think turning off/on notifications and playing "lofi hip hop beats to study and relax to"
+      - [todo.txt support](https://github.com/todotxt/todo.txt)
 
-```elixir
-def deps do
-  [
-    {:pomaid, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/pomaid](https://hexdocs.pm/pomaid).
-
+## To Do
+  - [ ] Create basic ratatouille TUI
+  - [ ] Create Todo, Doing, and Done
+  - [ ] Read in todo.txt files
+  - [ ] Display tasks from todo.txt files
+  - [ ] Do tasks from todo.txt
+  - [ ] Move tasks around and automatically reassign priority
+  - [ ] Group by project
+  - [ ] Allow easily switching between projects as different "boards"
+  - [ ] Filtering by context
+  - [ ] Pomodoro timer start and stop
+  - [ ] Pomodoro count tracking per task
+  - [ ] Pomodoro start and end script
+  - [ ] Additional Vim keybindings for movement
+  - [ ] '?' opens keybindings list
