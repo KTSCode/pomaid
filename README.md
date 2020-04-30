@@ -34,3 +34,6 @@ This project was inspired by two existing pieces of software. Both of these proj
   - [ ] Pomodoro start and end script
   - [ ] Additional Vim keybindings for movement
   - [ ] '?' opens keybindings list
+
+## Misc.
+  - [Potential Logo](https://www.istockphoto.com/ca/vector/man-hair-icon-with-text-space-for-your-slogan-tagline-vector-illustration-gm945507648-258245680)
