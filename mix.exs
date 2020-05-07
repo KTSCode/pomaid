@@ -28,7 +28,6 @@ defmodule Pomaid.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:recon_ex, "~> 0.9.1"},
       {:git_hooks, "~> 0.4.1", only: :dev, runtime: false},
       {:excoveralls, "~> 0.12.3", only: :test},
       {:credo, "~> 1.4.0", only: :dev, runtime: false},

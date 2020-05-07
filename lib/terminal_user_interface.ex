@@ -1,4 +1,4 @@
-defmodule Pomaid do
+defmodule TerminalUserInterface do
   @moduledoc """
   Documentation for `Pomaid`.
   """
@@ -8,7 +8,7 @@ defmodule Pomaid do
 
   ## Examples
 
-      iex> Pomaid.hello()
+      iex> TerminalUserInterface.hello()
       :world
 
   """
