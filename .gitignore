@@ -24,3 +24,5 @@ pomaid-*.tar
 
 # Ignore elixir language server data
 /.elixir_ls/
+
+/ratatouille/

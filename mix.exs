@@ -4,6 +4,7 @@ defmodule Pomaid.MixProject do
   def project do
     [
       test_coverage: [tool: ExCoveralls],
+      elixirc_options: [warnings_as_errors: true],
       preferred_cli_env: [
         coveralls: :test,
         "coveralls.detail": :test,
@@ -21,6 +22,7 @@ defmodule Pomaid.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {Pomaid, []},
       extra_applications: [:logger]
     ]
   end

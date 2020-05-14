@@ -19,8 +19,13 @@ This project was inspired by two existing pieces of software. Both of these proj
         - Think turning off/on notifications and playing "lofi hip hop beats to study and relax to"
       - [todo.txt support](https://github.com/todotxt/todo.txt)
 
+## Up and running
+  - `iex -S mix`
+  - `Ratatouille.run(TerminalUserInterface)`
+
 ## To Do
-  - [ ] Create basic ratatouille TUI
+  - [x] Create basic ratatouille TUI
+  - [ ] Get OTP app working and tests running
   - [ ] Create Todo, Doing, and Done
   - [ ] Read in todo.txt files
   - [ ] Display tasks from todo.txt files
