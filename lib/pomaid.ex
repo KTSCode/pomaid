@@ -1,4 +1,7 @@
 defmodule Pomaid do
+  @moduledoc """
+    Main application
+  """
   use Application
 
   def start(_type, _args) do
