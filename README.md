@@ -25,7 +25,7 @@ This project was inspired by two existing pieces of software. Both of these proj
 
 ## To Do
   - [x] Create basic ratatouille TUI
-  - [ ] Get OTP app working and tests running
+  - [x] Get OTP app working and tests running
   - [ ] Create Todo, Doing, and Done
   - [ ] Read in todo.txt files
   - [ ] Display tasks from todo.txt files

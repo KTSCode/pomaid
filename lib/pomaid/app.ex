@@ -17,25 +17,22 @@ defmodule Pomaid.App do
     end
   end
 
-  def render(model) do
+  def render(_model) do
     view do
       panel title: " Pomaid (q to quit)", color: :green, attributes: [:bold] do
         row do
           column size: 4 do
             panel title: 'To Do:' do
-              label(content: "Counter is #{model} (+/- to increment/decrement)")
             end
           end
 
           column size: 4 do
             panel title: 'Doing:' do
-              label(content: "Counter is #{model} (+/- to increment/decrement)")
             end
           end
 
           column size: 4 do
             panel title: 'Done:' do
-              label(content: "Counter is #{model} (+/- to increment/decrement)")
             end
           end
         end
@@ -44,7 +41,6 @@ defmodule Pomaid.App do
   end
 
   @doc """
-  Hello world.
 
   ## Examples
 

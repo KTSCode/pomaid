@@ -45,7 +45,8 @@ defmodule Pomaid.MixProject do
   # stops infinite test loop
   defp aliases do
     [
-      test: "test --no-start"
+      test: "test --no-start",
+      tw: "test.watch --no-start"
     ]
   end
 end
