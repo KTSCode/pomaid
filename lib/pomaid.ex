@@ -5,8 +5,13 @@ defmodule Pomaid do
   use Application
 
   def start(_type, _args) do
+    runtime_opts = [
+      app: Pomaid.App,
+      shutdown: {:application, :pomaid}
+    ]
+
     children = [
-      {Ratatouille.Runtime.Supervisor, runtime: [app: TerminalUserInterface]}
+      {Ratatouille.Runtime.Supervisor, runtime: runtime_opts}
       # other workers...
     ]
 
@@ -24,4 +29,8 @@ defmodule Pomaid do
     # rather annoying lag when quitting the terminal application.
     System.halt()
   end
+
+  @version Mix.Project.config()[:version]
+
+  def version, do: @version
 end

@@ -25,4 +25,6 @@ pomaid-*.tar
 # Ignore elixir language server data
 /.elixir_ls/
 
+# example repos
 /ratatouille/
+/toby/

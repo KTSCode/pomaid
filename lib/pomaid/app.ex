@@ -1,4 +1,4 @@
-defmodule TerminalUserInterface do
+defmodule Pomaid.App do
   @moduledoc """
     TUI: this is the Terminal User Interface for Pomaid
   """
@@ -48,7 +48,7 @@ defmodule TerminalUserInterface do
 
   ## Examples
 
-      iex> TerminalUserInterface.hello()
+      iex> Pomaid.App.hello()
       :world
 
   """
