@@ -4,6 +4,7 @@ defmodule Pomaid.FileInterface do
     provides functions for reading and writing to files, specifically at todo.txt file and a done.txt file
   """
 
+  @doc "Reads file from <path> and returns :ok/:error tuple ok: with list"
   def read_todo_txt(path) do
     case File.read(path) do
       {:error, e} ->

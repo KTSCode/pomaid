@@ -6,34 +6,61 @@ defmodule Pomaid.App do
   @behaviour Ratatouille.App
 
   import Ratatouille.View
+  import Pomaid.FileInterface
 
-  def init(_context), do: 0
+  def init(_context) do
+    {:ok, todos} = read_todo_txt("todo.txt")
+    todos
+  end
 
   def update(model, msg) do
     case msg do
-      {:event, %{ch: ?+}} -> model + 1
-      {:event, %{ch: ?-}} -> model - 1
-      _ -> model
+      {:event, %{ch: ?+}} ->
+        ["task" | model]
+
+      {:event, %{ch: ?-}} ->
+        [_head | tail] = model
+        tail
+
+      _ ->
+        model
     end
   end
 
-  def render(_model) do
+  def render(model) do
     view do
-      panel title: " Pomaid (q to quit)", color: :green, attributes: [:bold] do
-        row do
-          column size: 4 do
-            panel title: 'To Do:' do
-            end
-          end
+      # Title
+      label(
+        content: "Pomaid (q to quit)",
+        color: :black,
+        background: :green,
+        attributes: [:bold, :underline]
+      )
 
-          column size: 4 do
-            panel title: 'Doing:' do
-            end
-          end
+      row do
+        column size: 4 do
+          panel title: "To Do:" do
+            Enum.map(
+              model,
+              &panel title: &1 do
+                label(content: "priority")
+                label(content: "other stuff")
 
-          column size: 4 do
-            panel title: 'Done:' do
-            end
+                label(
+                  content: "this is a really super long line that will definitely have to wrap"
+                )
+              end
+            )
+          end
+        end
+
+        column size: 4 do
+          panel title: "Doing:" do
+          end
+        end
+
+        column size: 4 do
+          panel title: "Done:" do
           end
         end
       end
