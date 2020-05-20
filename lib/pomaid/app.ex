@@ -9,12 +9,16 @@ defmodule Pomaid.App do
   import Pomaid.FileInterface
 
   def init(_context) do
-    {:ok, todos} = read_todo_txt("todo.txt")
+    {:ok, file_name} = select_todo_file()
+    {:ok, todos} = read_todo_file(file_name)
     todos
   end
 
   def update(model, msg) do
     case msg do
+      {:event, %{ch: ?r}} ->
+        init("reload")
+
       {:event, %{ch: ?+}} ->
         ["task" | model]
 
@@ -31,7 +35,7 @@ defmodule Pomaid.App do
     view do
       # Title
       label(
-        content: "Pomaid (q to quit)",
+        content: "Pomaid (q to quit, r to reload)",
         color: :black,
         background: :green,
         attributes: [:bold, :underline]
@@ -43,12 +47,6 @@ defmodule Pomaid.App do
             Enum.map(
               model,
               &panel title: &1 do
-                label(content: "priority")
-                label(content: "other stuff")
-
-                label(
-                  content: "this is a really super long line that will definitely have to wrap"
-                )
               end
             )
           end
@@ -65,17 +63,5 @@ defmodule Pomaid.App do
         end
       end
     end
-  end
-
-  @doc """
-
-  ## Examples
-
-      iex> Pomaid.App.hello()
-      :world
-
-  """
-  def hello do
-    :world
   end
 end

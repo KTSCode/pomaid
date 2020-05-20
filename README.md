@@ -26,10 +26,12 @@ This project was inspired by two existing pieces of software. Both of these proj
 ## To Do
   - [x] Create basic ratatouille TUI
   - [x] Get OTP app working and tests running
-  - [ ] Create Todo, Doing, and Done
-  - [ ] Read in todo.txt files
-  - [ ] Display tasks from todo.txt files
-  - [ ] Do tasks from todo.txt
+  - [x] Create Todo, Doing, and Done
+  - [x] Read in todo.txt files
+  - [x] Display tasks from todo.txt files
+  - [x] Make 'r' reload todo file
+  - [ ] Read in Done tasks
+  - [ ] Use arrow keys to select tasks
   - [ ] Move tasks around and automatically reassign priority
   - [ ] Group by project
   - [ ] Allow easily switching between projects as different "boards"
