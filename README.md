@@ -20,8 +20,8 @@ This project was inspired by two existing pieces of software. Both of these proj
       - [todo.txt support](https://github.com/todotxt/todo.txt)
 
 ## Up and running
+  - `mix deps.get`
   - `iex -S mix`
-  - `Ratatouille.run(TerminalUserInterface)`
 
 ## To Do
   - [x] Create basic ratatouille TUI
@@ -36,6 +36,9 @@ This project was inspired by two existing pieces of software. Both of these proj
   - [ ] Group by project
   - [ ] Allow easily switching between projects as different "boards"
   - [ ] Filtering by context
+  - [ ] Allow marking tasks as done, updating the file
+  - [ ] Allow creation of new tasks
+  - [ ] Allow modification of existing tasks
   - [ ] Pomodoro timer start and stop
   - [ ] Pomodoro count tracking per task
   - [ ] Pomodoro start and end script
