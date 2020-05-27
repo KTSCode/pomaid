@@ -23,7 +23,7 @@ defmodule Pomaid.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: {Pomaid, []},
+      # mod: {Pomaid, []},
       extra_applications: [:logger]
     ]
   end
@@ -45,7 +45,8 @@ defmodule Pomaid.MixProject do
   defp aliases do
     [
       test: "test --no-start",
-      tw: "test.watch --no-start"
+      tw: "test.watch --no-start",
+      run: "run --no-halt"
     ]
   end
 end
