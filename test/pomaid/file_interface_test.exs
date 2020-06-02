@@ -3,6 +3,32 @@ defmodule Pomaid.FileInterfaceTest do
   doctest Pomaid.FileInterface
   import Pomaid.FileInterface
 
+  describe "select_todo_file" do
+    test "when there is a local README and no path is passed" do
+      assert select_todo_file() == {:ok, "README.md"}
+    end
+
+    test "when there is a path passed and no todo.txt or README.md" do
+      assert select_todo_file("lib") == {:error, "No todo.txt or README.md in path"}
+    end
+
+    test "when there is a path passed and a todo.txt in the path" do
+      {:ok, file} = File.open("test/todo.txt", [:write])
+
+      IO.binwrite(file, """
+        (A) Thank Mom for the meatballs @phone
+        (B) Schedule Goodwill pickup +GarageSale @phone
+        Post signs around the neighborhood +GarageSale
+        @GroceryStore Eskimo pies
+      """)
+
+      File.close(file)
+      assert select_todo_file("test") == {:ok, "test/todo.txt"}
+
+      File.rm("test/todo.txt")
+    end
+  end
+
   describe "read_todo_file" do
     test "when the file doesn't exist, it returns an error tuple" do
       assert read_todo_file("imaginary_file.txt") == {:error, :enoent}
@@ -60,32 +86,6 @@ defmodule Pomaid.FileInterfaceTest do
                 ]}
 
       File.rm("test/README.md")
-    end
-  end
-
-  describe "select_todo_file" do
-    test "when there is a local README and no path is passed" do
-      assert select_todo_file() == {:ok, "README.md"}
-    end
-
-    test "when there is a path passed and no todo.txt or README.md" do
-      assert select_todo_file("lib") == {:error, "No todo.txt or README.md in path"}
-    end
-
-    test "when there is a path passed and a todo.txt in the path" do
-      {:ok, file} = File.open("test/todo.txt", [:write])
-
-      IO.binwrite(file, """
-        (A) Thank Mom for the meatballs @phone
-        (B) Schedule Goodwill pickup +GarageSale @phone
-        Post signs around the neighborhood +GarageSale
-        @GroceryStore Eskimo pies
-      """)
-
-      File.close(file)
-      assert select_todo_file("test") == {:ok, "test/todo.txt"}
-
-      File.rm("test/todo.txt")
     end
   end
 end

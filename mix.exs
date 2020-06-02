@@ -23,7 +23,7 @@ defmodule Pomaid.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      # mod: {Pomaid, []},
+      mod: {Pomaid, []},
       extra_applications: [:logger]
     ]
   end
@@ -31,13 +31,15 @@ defmodule Pomaid.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ratatouille, "~> 0.5.1"},
       {:git_hooks, "~> 0.4.1", only: :dev, runtime: false},
-      {:excoveralls, "~> 0.12.3", only: :test, runtime: false},
+      {:excoveralls, "~> 0.12.3", only: :test},
       {:credo, "~> 1.4.0", only: :dev, runtime: false},
       {:mix_test_watch, "~> 1.0.2", only: :dev, runtime: false},
       {:ex_doc, "~> 0.21.3", only: :dev, runtime: false},
-      {:mock, "~> 0.3.4", only: :dev, runtime: false}
+      {:ratatouille, "~> 0.5.1"},
+      {:dep_from_hexpm, "~> 0.3.0"},
+      {:mock, "~> 0.3.4"}
+      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end
 
@@ -45,8 +47,7 @@ defmodule Pomaid.MixProject do
   defp aliases do
     [
       test: "test --no-start",
-      tw: "test.watch --no-start",
-      run: "run --no-halt"
+      tw: "test.watch --no-start"
     ]
   end
 end
