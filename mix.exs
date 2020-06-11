@@ -32,6 +32,7 @@ defmodule Pomaid.MixProject do
   defp deps do
     [
       {:git_hooks, "~> 0.4.1", only: :dev, runtime: false},
+      {:tap, "~> 0.1.5", only: :dev, runtime: false},
       {:excoveralls, "~> 0.12.3", only: :test},
       {:credo, "~> 1.4.0", only: :dev, runtime: false},
       {:mix_test_watch, "~> 1.0.2", only: :dev, runtime: false},

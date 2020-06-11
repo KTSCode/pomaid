@@ -44,6 +44,8 @@ This project was inspired by two existing pieces of software. Both of these proj
   - [ ] Pomodoro start and end script
   - [ ] Additional Vim keybindings for movement
   - [ ] '?' opens keybindings list
+  - [ ] Fuzzy search tasks
+  - [ ] Make a command that moves a task to doing(or swaps the current on) and starts a pomodoro for it
 
 ## Misc.
   - [Potential Logo](https://www.istockphoto.com/ca/vector/man-hair-icon-with-text-space-for-your-slogan-tagline-vector-illustration-gm945507648-258245680)

@@ -11,7 +11,7 @@ defmodule Pomaid.App do
   def init(_context) do
     {:ok, file_name} = select_todo_file()
     {:ok, todos} = read_todo_file(file_name)
-    %{todo: todos}
+    %{todo: todos, doing: [], done: []}
   end
 
   def update(model, msg) do
