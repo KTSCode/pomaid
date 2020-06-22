@@ -46,6 +46,7 @@ This project was inspired by two existing pieces of software. Both of these proj
   - [ ] '?' opens keybindings list
   - [ ] Fuzzy search tasks
   - [ ] Make a command that moves a task to doing(or swaps the current on) and starts a pomodoro for it
+  - [ ] Keep track of number of Pomodori done that day/week/month(pomodoro metrics)
 
 ## Misc.
   - [Potential Logo](https://www.istockphoto.com/ca/vector/man-hair-icon-with-text-space-for-your-slogan-tagline-vector-illustration-gm945507648-258245680)

@@ -45,6 +45,20 @@ defmodule Pomaid.FileInterface do
     end
   end
 
+  def read_done_file(path) do
+    case File.read(path) do
+      {:error, e} ->
+        {:error, e}
+
+      {:ok, contents} ->
+        {:ok, contents}
+        # cond do
+        #  String.contains?(path, "README.md") -> {:ok, parse_readme(contents)}
+        #  true -> {:ok, parse_todo_txt(contents)}
+        # end
+    end
+  end
+
   @doc ~S"""
    Takes a raw todo.txt file and splits it by lines, trimming whitespace and removing blank lines
    ## Examples

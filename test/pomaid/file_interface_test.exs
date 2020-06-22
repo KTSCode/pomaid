@@ -88,4 +88,44 @@ defmodule Pomaid.FileInterfaceTest do
       File.rm("test/README.md")
     end
   end
+
+  describe "read_done_file" do
+    test "when the file doesn't exist, it returns an error tuple" do
+      assert read_done_file("imaginary_file.txt") == {:error, :enoent}
+    end
+
+    test "when the file is a done.txt file, it returns an ok tuple with the file parsed as a list" do
+      {:ok, file} = File.open("test/todo.txt", [:write])
+
+      IO.binwrite(file, """
+        x 2020-06-11 Add new feature to Pomaid +pomaid
+        x 2020-06-10 (B) Come up with a cool elixir project @elixir
+        x 2020-06-07 (A) Figure out how to get pomodoro timer integrated with tmux @productivity
+      """)
+
+      File.close(file)
+
+      assert read_todo_file("test/todo.txt") ==
+               {:ok,
+                [
+                  %{
+                    done_date: "2020-06-11",
+                    description: "Add new feature to Pomaid",
+                    projects: [:pomaid]
+                  },
+                  %{
+                    done_date: "2020-06-10",
+                    description: "Come up with a cool elixir project",
+                    contexts: [:elixir]
+                  },
+                  %{
+                    done_date: "2020-06-07",
+                    description: "Figure out how to get pomodoro timer integrated with tmux",
+                    contexts: [:productivity]
+                  }
+                ]}
+
+      File.rm("test/todo.txt")
+    end
+  end
 end
